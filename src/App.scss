@@ -1,0 +1,140 @@
+$main_color: #fafafa;
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #fafafa;
+  font-family: Arial;
+  text-transform: uppercase;
+  button {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(#174675, #0c0f29);
+  .component_wrapper {
+    width: 70vw;
+    .header {
+      margin: 2vw;
+      height: 7vw;
+      padding: 2vw;
+      display: flex;
+      border-radius: 2vw;
+      border: 0.3vw solid rgba($color: $main_color, $alpha: 0.4);
+      .game_name {
+        width: 100vw;
+        text-align: center;
+        h1 {
+          font-size: 2vw;
+        }
+      }
+      .user_score {
+        width: 13vw;
+        display: flex;
+        padding: 1.5vw;
+        text-align: center;
+        border-radius: 1vw;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgba($color: $main_color, $alpha: 0.8);
+        h1 {
+          font-size: 3.5vw;
+          color: #113354;
+        }
+        p {
+          color: #161677;
+          font-size: 1.2vw;
+        }
+      }
+    }
+    .game_part {
+      width: 70vw;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      .player {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        h3 {
+          top: 17vw;
+          font-size: 1.5vw;
+          position: absolute;
+        }
+        img {
+          top: 22vw;
+          width: 18vw;
+          position: absolute;
+        }
+      }
+      .controller {
+        @extend .player;
+        h1 {
+          top: 25vw;
+          font-size: 2.7vw;
+          position: absolute;
+          margin-bottom: 1vw;
+        }
+        button {
+          top: 30vw;
+          width: 13vw;
+          border: none;
+          font-size: 1vw;
+          padding: 0.8vw;
+          color: #c54646;
+          font-weight: bold;
+          position: absolute;
+          border-radius: 0.6vw;
+          background-color: $main_color;
+        }
+      }
+      .start {
+        @extend .controller;
+      }
+      .computer {
+        @extend .player;
+      }
+    }
+  }
+  .toggleScreen {
+  	top: 1vw;
+  	left: 1vw;
+  	width: 8vw;
+  	height: 3vw;
+  	opacity: 0.5;
+  	color: white;
+  	background: none;
+  	font-size: 1.4vw;
+  	font-weight: bold;
+  	position: absolute;
+  	border-radius: .5vw;
+  	border: .3vw solid white ;
+  	&:hover {
+  		opacity: 0.8;
+  	};
+  }
+  .rules {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 40vw;
+      animation: fader 800ms ease-in-out;
+    }
+  }
+  @keyframes fader {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+  }
+}
+.winner {
+    border-radius: 50%;
+    box-shadow: 0px 0px 50px #fafafa;
+  }
